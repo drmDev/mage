@@ -423,6 +423,7 @@ public class AttackBlockRestrictionsTest extends CardTestPlayerBase {
         setStopAt(3, PhaseStep.POSTCOMBAT_MAIN);
         execute();
         
+        assertLife(playerA, 17); // Hill Giant dealt damage unblocked
         assertLife(playerB, 12); // Hill Giant could not block it, so no other creature could block Tromokratis either
         assertPermanentCount(playerB, gBears, 1);
         assertPermanentCount(playerB, memnite, 1);
